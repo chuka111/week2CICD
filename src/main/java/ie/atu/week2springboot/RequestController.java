@@ -1,9 +1,6 @@
 package ie.atu.week2springboot;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/person")
@@ -16,7 +13,10 @@ public class RequestController {
     public String getGreeting(@PathVariable String name) {
         return "greeting " + name;}
 
-
+    @GetMapping("/details")
+    public String getDetails(@RequestParam String name, @RequestParam int age){
+        return "name " + name + " age " + age;
+    }
 
 
 }
